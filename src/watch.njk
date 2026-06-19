@@ -1,0 +1,65 @@
+---
+layout: base.njk
+pagination:
+  data: watches
+  size: 1
+  alias: watch
+permalink: "/watches/{{ watch.id }}/"
+eleventyComputed:
+  title: "{{ watch.title }}"
+---
+<a class="back-link" href="/">&larr; Back to all watches</a>
+
+<article class="watch-detail">
+  <div class="watch-detail__media">
+    {% if watch.largeImages.length %}
+    <div class="swiper carousel carousel--large">
+      <div class="swiper-wrapper">
+        {% for img in watch.largeImages %}
+        <div class="swiper-slide">
+          <img src="{{ img }}" alt="{{ watch.title }}">
+        </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+    {% else %}
+    <div class="carousel carousel--large carousel--empty">No photos yet</div>
+    {% endif %}
+  </div>
+
+  <div class="watch-detail__info">
+    <h1>{{ watch.title }}</h1>
+
+    <dl class="watch-detail__facts">
+      <dt>Brand</dt>
+      <dd>{{ watch.brand }}</dd>
+
+      <dt>Model</dt>
+      <dd>{{ watch.model }}</dd>
+
+      <dt>Year</dt>
+      <dd>{{ watch.year }}</dd>
+
+      <dt>Condition</dt>
+      <dd>{{ watch.condition }}</dd>
+    </dl>
+
+    {% if watch.description %}
+    <section class="watch-detail__description">
+      <h2>Description</h2>
+      <p>{{ watch.description }}</p>
+    </section>
+    {% endif %}
+
+    {% if watch.tags and watch.tags.length %}
+    <ul class="tag-list">
+      {% for tag in watch.tags %}
+      <li class="tag">{{ tag }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</article>

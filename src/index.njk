@@ -1,0 +1,36 @@
+---
+layout: base.njk
+title: My Watch Catalog
+---
+<h1 class="page-heading">My Watch Collection</h1>
+
+<div class="watch-grid">
+  {% for watch in watches %}
+  <article class="watch-card{% if loop.index > 6 %} watch-card--hidden{% endif %}">
+    <a href="{{ watch.url }}" class="watch-card__image-link">
+      {% if watch.thumbImages.length %}
+      <div class="swiper carousel">
+        <div class="swiper-wrapper">
+          {% for img in watch.thumbImages %}
+          <div class="swiper-slide">
+            <img src="{{ img }}" alt="{{ watch.title }}" loading="lazy">
+          </div>
+          {% endfor %}
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+      {% else %}
+      <div class="carousel carousel--empty">No photos yet</div>
+      {% endif %}
+    </a>
+    <h2 class="watch-card__title">
+      <a href="{{ watch.url }}">{{ watch.title }}</a>
+    </h2>
+  </article>
+  {% endfor %}
+</div>
+
+<div class="load-more-wrap">
+  <button id="load-more" class="load-more-btn" type="button">Load more</button>
+</div>

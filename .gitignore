@@ -1,0 +1,9 @@
+node_modules/
+_site/
+.DS_Store
+Thumbs.db
+
+# Raw photos are just a staging area before processing — only the
+# processed output in src/assets/images is meant to be committed.
+incoming-photos/*
+!incoming-photos/.gitkeep

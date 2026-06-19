@@ -15,7 +15,8 @@ Node.js is the program that runs the website's tools (Eleventy, the photo resize
    ```
    node -v
    ```
-   You should see a version number like `v22.x.x`. This project expects **Node 20 or newer**.
+   You should see a version number like `v24.x.x`. This project expects **Node 20 or newer**
+   (the current LTS release, whatever that is when you install, is always a safe choice).
 
 ### Updating Node.js later
 

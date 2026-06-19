@@ -70,7 +70,7 @@ You'll use this exact slug in steps 2–4 below.
 ```
 npm start
 ```
-Open `http://localhost:8080` and check your new watch appears correctly, then click into its
+Open `http://localhost:8080/watch-catalog/` and check your new watch appears correctly, then click into its
 detail page. Press `Ctrl + C` in the terminal to stop the server when you're done.
 
 ## 5. Publish it

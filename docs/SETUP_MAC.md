@@ -66,7 +66,7 @@ npm start
 ```
 Leave this running, then open your browser to:
 ```
-http://localhost:8080
+http://localhost:8080/watch-catalog/
 ```
 You should see the sample watch catalog. To stop the server, go back to Terminal and press
 `Ctrl + C`.

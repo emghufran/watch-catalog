@@ -8,7 +8,7 @@ permalink: "/watches/{{ watch.id }}/"
 eleventyComputed:
   title: "{{ watch.title }}"
 ---
-<a class="back-link" href="/">&larr; Back to all watches</a>
+<a class="back-link" href="{{ '/' | url }}">&larr; Back to all watches</a>
 
 <article class="watch-detail">
   <div class="watch-detail__media">
@@ -17,7 +17,7 @@ eleventyComputed:
       <div class="swiper-wrapper">
         {% for img in watch.largeImages %}
         <div class="swiper-slide">
-          <img src="{{ img }}" alt="{{ watch.title }}">
+          <img src="{{ img | url }}" alt="{{ watch.title }}">
         </div>
         {% endfor %}
       </div>

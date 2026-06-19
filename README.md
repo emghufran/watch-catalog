@@ -26,10 +26,15 @@ published for free on GitHub Pages.
 ## Quick reference (once set up)
 
 ```
-npm start              # preview the site locally at http://localhost:8080
+npm start              # preview the site locally at http://localhost:8080/watch-catalog/
 npm run build           # build the static site into _site/ (mostly for CI)
 npm run process-photos   # resize every folder in incoming-photos/
 ```
 
-This repo ships with 4 sample watches so you can see how everything fits together before
-adding your own.
+Note the `/watch-catalog/` in the local preview URL — the site is configured (via `pathPrefix`
+in `.eleventy.js`) to match how GitHub Pages serves it in production, so links and images work
+identically in both places. See [docs/DEPLOY_GITHUB_PAGES.md](docs/DEPLOY_GITHUB_PAGES.md) if
+you ever rename the repo or host it at the domain root instead.
+
+This repo ships with 9 sample watches (including a single-photo and a zero-photo example) so
+you can see how everything fits together before adding your own.

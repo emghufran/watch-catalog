@@ -7,13 +7,13 @@ title: My Watch Catalog
 <div class="watch-grid">
   {% for watch in watches %}
   <article class="watch-card{% if loop.index > 6 %} watch-card--hidden{% endif %}">
-    <a href="{{ watch.url }}" class="watch-card__image-link">
+    <a href="{{ watch.url | url }}" class="watch-card__image-link">
       {% if watch.thumbImages.length %}
       <div class="swiper carousel">
         <div class="swiper-wrapper">
           {% for img in watch.thumbImages %}
           <div class="swiper-slide">
-            <img src="{{ img }}" alt="{{ watch.title }}" loading="lazy">
+            <img src="{{ img | url }}" alt="{{ watch.title }}" loading="lazy">
           </div>
           {% endfor %}
         </div>
@@ -25,7 +25,7 @@ title: My Watch Catalog
       {% endif %}
     </a>
     <h2 class="watch-card__title">
-      <a href="{{ watch.url }}">{{ watch.title }}</a>
+      <a href="{{ watch.url | url }}">{{ watch.title }}</a>
     </h2>
   </article>
   {% endfor %}
